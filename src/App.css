@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.phone-frame {
+  width: 350px;
+  height: 600px;
+  background: linear-gradient(145deg, #1f1f1f, #121212);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.chat-header {
+  background-color: #1a1a1a;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+  border-radius: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+.message.sent {
+  background-color: #4e89ff;
+  align-self: flex-end;
+  border-radius: 20px 20px 0 20px;
+  
+}
+.message.sent:hover{
+    background: #0080ffb3;
+    /* transition: 1s; */
+}
+
+.message.received {
+  background-color: #2a2a2a;
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 0;
+}
+.message.received:hover{
+    background: #000000b3;
+    /* transition: 1s; */
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+  outline: none;
+}
+
+.input-area input::placeholder {
+  color: #aaa;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  background-color: #4e89ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #3b6fd0;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
