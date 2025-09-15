@@ -6,17 +6,14 @@ const App1 = () => {
     let [input, setInput] = useState("");
     let [inputtwo, setInputtwo] = useState("");
 
-    let [arr, setArr] = useState(() => {
-        return JSON.parse(localStorage.getItem("chat")) || [];
-    });
+    let [arr, setArr] = useState( JSON.parse(localStorage.getItem("send")) || []);
 
-    localStorage.setItem("chat", JSON.stringify(arr));
 
     let hendleSendl = () => {
         if (input) {
             let left = { id: "you", msg: input };
             setArr([...arr, left]);
-            localStorage.setItem("send", JSON.stringify([...arr, left]))
+            localStorage.setItem("send", JSON.stringify(arr))
             setInput("");
         }
         else {
@@ -28,13 +25,13 @@ const App1 = () => {
         if (inputtwo) {
             let right = { id: "Resiver", msg: inputtwo };
             setArr([...arr, right]);
-            localStorage.setItem("resive", JSON.stringify([...arr, right]))
             setInputtwo("");
         }
         else {
             alert("Ples Enter Message...")
         }
     };
+    localStorage.setItem("send", JSON.stringify(arr))
 
     return (
         <div className="main">
